@@ -25,6 +25,10 @@ function createGLShell(options) {
             canvas.style.left = "0px";
             canvas.style.top = "0px";
             shell.element.appendChild(canvas);
+        } else {
+            //Load size from canvas
+            shell._width = canvas.style.width;
+            shell._height = canvas.style.height;
         }
 
         //Try initializing WebGL
@@ -92,8 +96,8 @@ function createGLShell(options) {
     });
 
     function resize() {
-        var nw = (shell._width/scale) | 0;
-        var nh = (shell._height/scale) | 0;
+        var nw = (shell._width / scale) | 0;
+        var nh = (shell._height / scale) | 0;
         shell.canvas.width = nw;
         shell.canvas.height = nh;
         shell.canvas.style.width = shell._width + 'px';
