@@ -27,8 +27,8 @@ function createGLShell(options) {
             shell.element.appendChild(canvas);
         } else {
             //Load size from canvas
-            shell._width = canvas.style.width;
-            shell._height = canvas.style.height;
+            shell._width = parseInt(canvas.style.width, 10);
+            shell._height = parseInt(canvas.style.height, 10);
         }
 
         //Try initializing WebGL
